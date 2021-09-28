@@ -1,5 +1,7 @@
 package com.aruna.androiddaggerapps;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 import retrofit2.Retrofit;
@@ -11,6 +13,7 @@ public class NetworkModule {
     // @Provides tell Dagger how to create instances of the type that this function
     // returns (i.e. LoginRetrofitService).
     // Function parameters are the dependencies of this type.
+    @Singleton
     @Provides
     public LoginRetrofitService provideLoginRetrofitService() {
         // Whenever Dagger needs to provide an instance of type LoginRetrofitService,

@@ -1,9 +1,12 @@
 package com.aruna.androiddaggerapps;
 
+import javax.inject.Singleton;
+
 import dagger.Component;
 
 // The "modules" attribute in the @Component annotation tells Dagger what Modules
 // to include when building the graph
+@Singleton
 @Component(modules = NetworkModule.class)
 public interface ApplicationComponent {
     // This tells Dagger that MainActivity requests injection so the graph needs to
