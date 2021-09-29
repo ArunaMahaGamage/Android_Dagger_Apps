@@ -12,7 +12,7 @@ import javax.inject.Inject;
 public class MainActivity extends AppCompatActivity {
 
     // Reference to the Login graph
-    LoginComponent loginComponent;
+    public LoginComponent loginComponent;
 
     // You want Dagger to provide an instance of LoginViewModel from the graph
     @Inject
