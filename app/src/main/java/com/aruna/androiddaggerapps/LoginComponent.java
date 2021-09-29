@@ -2,7 +2,9 @@ package com.aruna.androiddaggerapps;
 
 import dagger.Subcomponent;
 
-// @Subcomponent annotation informs Dagger this interface is a Dagger Subcomponent
+// Classes annotated with @ActivityScope are scoped to the graph and the same
+// instance of that type is provided every time the type is requested.
+@ActivityScope
 @Subcomponent
 public interface LoginComponent {
 
@@ -12,5 +14,10 @@ public interface LoginComponent {
         LoginComponent create();
     }
 
+    // All LoginActivity, LoginUsernameFragment and LoginPasswordFragment
+    // request injection from LoginComponent. The graph needs to satisfy
+    // all the dependencies of the fields those classes are injecting
     void inject(MainActivity mainActivity);
+//    void inject(LoginUsernameFragment loginUsernameFragment);
+//    void inject(LoginPasswordFragment loginPasswordFragment);
 }
